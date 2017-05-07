@@ -29,7 +29,6 @@ public class JoinListener implements Listener{
                 e.setCancelled(true);
                 p.disconnect(ChatColor.translateAlternateColorCodes('&', cfg.System_kickMSG));
             } else {
-                e.setCancelled(true);
                 p.sendMessage(ChatColor.translateAlternateColorCodes('&', cfg.System_notify));
             }
 

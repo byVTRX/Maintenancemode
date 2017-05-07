@@ -19,13 +19,11 @@ public class PingListener implements Listener {
         ServerPing conn = e.getResponse();
 
         if(cfg.System_enabled) {
-
                 conn.setVersion(new ServerPing.Protocol(cfg.System_PingMessage, 2));
                 conn.setPlayers(new ServerPing.Players(0, 0, new ServerPing.PlayerInfo[0]));
-                if(cfg.System_ChangeMOTD)
-                conn.setDescription(ChatColor.translateAlternateColorCodes('&', cfg.System_MOTD) + "\n§c§lMAINTENANCEMODE ACTIVE");
-
-
+                if(cfg.System_ChangeMOTD) {
+                    conn.setDescription(ChatColor.translateAlternateColorCodes('&', cfg.System_MOTD) + "\n§c§lMAINTENANCEMODE ACTIVE");
+                }
         } else {
             conn.setDescription(ChatColor.translateAlternateColorCodes('&', cfg.System_MOTD));
         }
